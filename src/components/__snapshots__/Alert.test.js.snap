@@ -1,0 +1,466 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when message has icon prop set to true 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: rgb(49,49,49);
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when message status is error 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #f44336;
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when message status is info 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #2196f3;
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when message status is success 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #00c853;
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when message status is warning 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #ff9800;
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when raised is provider 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #00c853;
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot when width is provider 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: #00c853;
+  width: auto;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="auto"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;
+
+exports[`(Notifications) NotificationContent renders to correct snapshot with default message payload 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  margin: 8px;
+  background-color: rgb(49,49,49);
+  width: 344px;
+  min-height: 48px;
+  border-radius: 3px;
+  padding: 6px 16px;
+  pointer-events: initial;
+  opacity: 0.98;
+}
+
+.c1 {
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1 0 264px;
+  -ms-flex: 1 0 264px;
+  flex: 1 0 264px;
+}
+
+.c1 svg,
+.c1 i {
+  color: white !important;
+}
+
+<div
+  class="c0"
+  width="344px"
+>
+  <div
+    class="c1"
+  >
+    morty
+  </div>
+</div>
+`;

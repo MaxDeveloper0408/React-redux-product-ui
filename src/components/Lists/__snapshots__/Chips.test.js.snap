@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chips mounts with basic props 1`] = `
+<div
+  class="MuiFormControl-root-1 MuiFormControl-marginDense-3 MuiFormControl-fullWidth-4 "
+>
+  <div
+    class="MuiInputBase-root-18 MuiOutlinedInput-root-5 MuiInputBase-disabled-21 MuiOutlinedInput-disabled-7 MuiInputBase-fullWidth-27 MuiInputBase-formControl-19 MuiInputBase-marginDense-25"
+  >
+    <fieldset
+      aria-hidden="true"
+      class="MuiPrivateNotchedOutline-root-35 MuiOutlinedInput-notchedOutline-12"
+      style="padding-left: 8px;"
+    >
+      <legend
+        class="MuiPrivateNotchedOutline-legend-36"
+        style="width: 0.01px;"
+      >
+        <span>
+          ​
+        </span>
+      </legend>
+    </fieldset>
+    <input
+      aria-describedby="test-list-table-helper-text"
+      aria-invalid="false"
+      class="MuiInputBase-input-28 MuiOutlinedInput-input-13 MuiInputBase-disabled-21 MuiOutlinedInput-disabled-7 MuiInputBase-inputMarginDense-29 MuiOutlinedInput-inputMarginDense-14"
+      disabled=""
+      id="test-list-table"
+      placeholder="Entry"
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    class="MuiFormHelperText-root-37 MuiFormHelperText-contained-41 MuiFormHelperText-marginDense-40 MuiFormHelperText-disabled-39"
+    id="test-list-table-helper-text"
+  >
+    press ENTER to add a new entry
+  </p>
+</div>
+`;

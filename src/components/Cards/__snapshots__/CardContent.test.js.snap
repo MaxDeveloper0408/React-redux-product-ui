@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Cards) CardContent mounts with basic props 1`] = `
+.c0 {
+  position: relative;
+  padding: 0 16px 16px 16px;
+}
+
+.c0 p {
+  padding: 0;
+}
+
+<div
+  class="c0"
+/>
+`;

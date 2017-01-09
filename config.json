@@ -1,0 +1,35 @@
+{
+  "development": {
+    "API_URL": "https://meta.test.galacticfog.com",
+    "SEC_API_URL": "https://security.test.galacticfog.com",
+    "API_TIMEOUT": 120000,
+    "API_RETRIES": 3,
+    "COMPANY_TITLE": "Galactic Fog",
+    "COMPANY_URL": "http://www.galacticfog.com/",
+    "APP_TITLE": "Gestalt Platform",
+    "DEFAULT_LANG": "en_us",
+    "LICENSE_EXP_THRESHOLD": 15,
+    "ANALYTICS_TRACKING_ACCT": "",
+    "ANALYTICS_TRACKING": false,
+    "DEBUG": true,
+    "DOCUMENTATION_URL": "http://docs.galacticfog.com",
+    "REQUIRE_HTTPS_COOKIE": false
+  },
+  "production": {
+    "API_URL": "/meta",
+    "SEC_API_URL": "/security",
+    "LOG_API_URL": "/log",
+    "API_TIMEOUT": 120000,
+    "API_RETRIES": 3,
+    "COMPANY_TITLE": "Galactic Fog",
+    "COMPANY_URL": "http://www.galacticfog.com/",
+    "APP_TITLE": "Gestalt Platform",
+    "DEFAULT_LANG": "en_us",
+    "LICENSE_EXP_THRESHOLD": 15,
+    "ANALYTICS_TRACKING_ACCT": "UA-68192914-2",
+    "ANALYTICS_TRACKING": true,
+    "DEBUG": false,
+    "DOCUMENTATION_URL": "http://docs.galacticfog.com",
+    "REQUIRE_HTTPS_COOKIE": false
+  }
+}

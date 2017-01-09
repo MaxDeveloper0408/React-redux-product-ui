@@ -1,0 +1,75 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+      "import",
+      "react",
+      "react-hooks"
+  ],
+  "overrides": [
+    {
+        "files": ["*.test.js", "*.jest.js"],
+        "rules": {
+            "no-unused-expressions": "off"
+        }
+    }
+  ],
+  "rules": {
+      "react/jsx-wrap-multilines": 0,
+      "react/destructuring-assignment": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "operator-linebreak": 0,
+      "implicit-arrow-linebreak": 0,
+      "react/sort-comp": 0,
+
+      "comma-dangle": 0,
+      "no-useless-constructor": 0,
+      "class-methods-use-this": 0,
+      "import/prefer-default-export": 0,
+      "import/no-webpack-loader-syntax": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/extensions": 0,
+      "react/require-extension": 0,
+      "react/jsx-boolean-value": 0,
+      "react/forbid-prop-types": 0,
+      "react/prefer-stateless-function": 0,
+      "react/jsx-filename-extension": 0,
+      "react/no-array-index-key": 0,
+      "react/no-unused-state": 0,
+      "max-len": 0,
+      "object-curly-newline": 0,
+      "function-paren-newline": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/no-marquee": 0,
+      "camelcase": 0,
+      "new-cap": [
+          2,
+          {
+              "capIsNewExceptions": [
+                  "Map",
+                  "List"
+              ]
+          }
+      ],
+      "react-hooks/rules-of-hooks": "error"
+  },
+  "env": {
+      "browser": true,
+      "mocha": true,
+      "jasmine": true,
+      "es6": true,
+      "jest": true
+  },
+  "settings": {
+      "import/resolver": {
+          "webpack": {
+              "config": "./webpack/webpack.config.js"
+          }
+      }
+  },
+  "globals": {
+      "sinon": false,
+      "mount": false,
+      "shallow": false
+  }
+}

@@ -1,0 +1,12 @@
+*.log
+build
+dist
+node_modules
+.DS_Store
+.idea
+.vscode
+build-stats.json
+stats.json
+coverage
+.yarnclean
+.yarn-cache

@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NaviationDrawers::FloatingDrawer renders correctly when a custom width is set 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  white-space: nowrap;
+  width: 100%;
+  -webkit-transition: 225ms -webkit-transform;
+  -webkit-transition: 225ms transform;
+  transition: 225ms transform;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  will-change: transform;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  left: 0;
+}
+
+<aside
+  class="c0"
+  direction="left"
+  open=""
+  width="100%"
+>
+  hahaha
+</aside>
+`;
+
+exports[`NaviationDrawers::FloatingDrawer renders correctly when direction is right and closed 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  white-space: nowrap;
+  width: 250px;
+  -webkit-transition: 225ms -webkit-transform;
+  -webkit-transition: 225ms transform;
+  transition: 225ms transform;
+  -webkit-transition-duration: 195ms;
+  transition-duration: 195ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  will-change: transform;
+  -webkit-transform: translateX(250px);
+  -ms-transform: translateX(250px);
+  transform: translateX(250px);
+  right: 0;
+}
+
+<aside
+  class="c0"
+  direction="right"
+  width="250px"
+>
+  hahaha
+</aside>
+`;
+
+exports[`NaviationDrawers::FloatingDrawer renders correctly when direction is right and open 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  white-space: nowrap;
+  width: 250px;
+  -webkit-transition: 225ms -webkit-transform;
+  -webkit-transition: 225ms transform;
+  transition: 225ms transform;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  will-change: transform;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  right: 0;
+}
+
+<aside
+  class="c0"
+  direction="right"
+  open=""
+  width="250px"
+>
+  hahaha
+</aside>
+`;
+
+exports[`NaviationDrawers::FloatingDrawer renders correctly with basic props and closed 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  white-space: nowrap;
+  width: 250px;
+  -webkit-transition: 225ms -webkit-transform;
+  -webkit-transition: 225ms transform;
+  transition: 225ms transform;
+  -webkit-transition-duration: 195ms;
+  transition-duration: 195ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  will-change: transform;
+  -webkit-transform: translateX(-250px);
+  -ms-transform: translateX(-250px);
+  transform: translateX(-250px);
+  left: 0;
+}
+
+<aside
+  class="c0"
+  direction="left"
+  width="250px"
+>
+  hahaha
+</aside>
+`;
+
+exports[`NaviationDrawers::FloatingDrawer renders correctly with basic props when open 1`] = `
+.c0 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12);
+  background-color: #fafafa;
+  white-space: nowrap;
+  width: 250px;
+  -webkit-transition: 225ms -webkit-transform;
+  -webkit-transition: 225ms transform;
+  transition: 225ms transform;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+  will-change: transform;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  left: 0;
+}
+
+<aside
+  class="c0"
+  direction="left"
+  open=""
+  width="250px"
+>
+  hahaha
+</aside>
+`;

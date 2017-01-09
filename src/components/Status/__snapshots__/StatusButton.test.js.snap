@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components::StatusButton::StatusButton mounts with default props 1`] = `
+<button
+  aria-haspopup="true"
+  aria-label="More"
+  class="MuiButtonBase-root-8 MuiIconButton-root-2 IconButtonStyled-button-1"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiIconButton-label-7"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root-11 MuiSvgIcon-colorPrimary-12 MuiSvgIcon-fontSizeSmall-18"
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+  </span>
+  <span
+    class="MuiTouchRipple-root-24"
+  />
+</button>
+`;
+
+exports[`Components::StatusButton::StatusButton renders correctly when a status is passed 1`] = `
+<button
+  aria-haspopup="true"
+  aria-label="More"
+  class="MuiButtonBase-root-8 MuiIconButton-root-2 IconButtonStyled-button-1"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiIconButton-label-7"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root-11 MuiSvgIcon-colorPrimary-12 MuiSvgIcon-fontSizeSmall-18"
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+  </span>
+  <span
+    class="MuiTouchRipple-root-24"
+  />
+</button>
+`;
+
+exports[`Components::StatusButton::StatusButton renders correctly when the button has inMenu passed 1`] = `
+<button
+  aria-haspopup="true"
+  aria-label="More"
+  class="MuiButtonBase-root-8 MuiIconButton-root-2 IconButtonStyled-button-1"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiIconButton-label-7"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root-11 MuiSvgIcon-colorPrimary-12 MuiSvgIcon-fontSizeSmall-18"
+      focusable="false"
+      role="presentation"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+  </span>
+  <span
+    class="MuiTouchRipple-root-24"
+  />
+</button>
+`;

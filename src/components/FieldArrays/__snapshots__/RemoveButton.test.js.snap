@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Components) RemoveButton mounts with basic renderWithTheme 1`] = `
+.c1 {
+  font-size: 20px;
+  color: action;
+}
+
+@media (min-width:0) and (max-width:599px) {
+  .c0 {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+  }
+}
+
+@media (min-width:600px) and (max-width:959px) {
+  .c0 {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+  }
+}
+
+<button
+  aria-label="Add to shopping cart"
+  class="MuiButtonBase-root-8 MuiIconButton-root-2 c0"
+  tabindex="0"
+  type="button"
+>
+  <span
+    class="MuiIconButton-label-7"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root-11 MuiSvgIcon-colorAction-14 c1"
+      focusable="false"
+      role="presentation"
+      size="20"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4z"
+      />
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+    </svg>
+  </span>
+</button>
+`;

@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NaviationDrawers::PersistentDrawer renders correctly with basic props and closed 1`] = `
+.c0 {
+  position: relative;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 11;
+  height: 100%;
+  width: 64px;
+  white-space: nowrap;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 195ms;
+  transition-duration: 195ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  will-change: transition;
+}
+
+<nav
+  class="c0"
+  width="200px"
+>
+  hahaha
+</nav>
+`;
+
+exports[`NaviationDrawers::PersistentDrawer renders correctly with basic props and open 1`] = `
+.c0 {
+  position: relative;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 11;
+  height: 100%;
+  width: 200px;
+  white-space: nowrap;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  will-change: transition;
+}
+
+<nav
+  class="c0"
+  open=""
+  width="200px"
+>
+  hahaha
+</nav>
+`;
+
+exports[`NaviationDrawers::PersistentDrawer renders correctly with miniWidth 1`] = `
+.c0 {
+  position: relative;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 11;
+  height: 100%;
+  width: 200px;
+  white-space: nowrap;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  will-change: transition;
+}
+
+<nav
+  class="c0"
+  open=""
+  width="200px"
+>
+  hahaha
+</nav>
+`;
+
+exports[`NaviationDrawers::PersistentDrawer renders correctly with width 1`] = `
+.c0 {
+  position: relative;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 225ms;
+  transition-duration: 225ms;
+  -webkit-transition-timing-function: cubic-bezier(0,0,0.2,1);
+  transition-timing-function: cubic-bezier(0,0,0.2,1);
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  will-change: transition;
+}
+
+<nav
+  class="c0"
+  open=""
+  width="100%"
+>
+  hahaha
+</nav>
+`;

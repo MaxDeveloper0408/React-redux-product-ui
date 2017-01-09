@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Notifications) Notifications renders to correct snapshot with items in the queue 1`] = `null`;
+
+exports[`(Notifications) Notifications renders to correct snapshot with no items in the queue 1`] = `null`;
