@@ -1,4 +1,4 @@
-import omit from 'lodash/omit';
+import { omit } from 'lodash';
 import jsonPatch from 'fast-json-patch';
 import resourceTypeModel from './models/resourceType';
 

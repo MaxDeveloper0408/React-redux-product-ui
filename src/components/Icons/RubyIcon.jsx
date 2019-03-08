@@ -143,7 +143,7 @@ RubyIcon.propTypes = {
 };
 
 RubyIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default RubyIcon;

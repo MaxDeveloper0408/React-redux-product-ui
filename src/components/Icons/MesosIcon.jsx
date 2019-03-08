@@ -19,7 +19,7 @@ MesosIcon.propTypes = {
 };
 
 MesosIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default MesosIcon;

@@ -35,9 +35,7 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
               label="Partition"
               component={TextField}
               type="number"
-              inputProps={{
-                min: 0,
-              }}
+              min="0"
               parse={value => Number(value)}
               required
               validate={composeValidators(
@@ -52,9 +50,7 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
               label="Start Offset"
               component={TextField}
               type="number"
-              inputProps={{
-                min: -1,
-              }}
+              min="-1"
               parse={value => Number(value)}
               required
               validate={composeValidators(
@@ -69,9 +65,7 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
               label="End Offset"
               component={TextField}
               type="number"
-              inputProps={{
-                min: -1,
-              }}
+              min="-1"
               parse={value => Number(value)}
               required
               validate={composeValidators(
@@ -84,11 +78,9 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
             <Field
               component={TextField}
               name="properties.cpus"
-              inputProps={{
-                min: 0.5,
-                max: 64.0,
-                step: 0.1,
-              }}
+              min={0.5}
+              max={64.0}
+              step={0.1}
               label="CPU"
               type="number"
               parse={value => parseFloat(value)}
@@ -103,11 +95,9 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
             <Field
               component={TextField}
               name="properties.mem"
-              inputProps={{
-                min: 512,
-                max: 524288,
-                step: 128,
-              }}
+              min={512}
+              max={524288}
+              step={128}
               label="Memory"
               type="number"
               parse={value => Number(value)}
@@ -123,10 +113,8 @@ const StreamPropertiesSection = ({ lambdas, datafeeds }) => (
             <Field
               component={TextField}
               name="properties.parallelization"
-              inputProps={{
-                min: 1,
-                step: 1,
-              }}
+              min={1}
+              step={1}
               label="Parallelization"
               type="number"
               parse={value => Number(value)}

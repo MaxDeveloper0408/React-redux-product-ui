@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { checkIfPassword } from 'util/helpers/strings';
 import { Col, Row } from 'react-flexybox';
-import map from 'lodash/map';
-import sortBy from 'lodash/sortBy';
+import { map, sortBy } from 'lodash';
 import Label from 'components/Label';
 
 class UnixVariablesListing extends PureComponent {

@@ -125,16 +125,17 @@ class HierarchyForm extends Component {
 
         <DialogActions>
           <FlatButton
+            key="hierarchy-context-form--cancel"
             label="Cancel"
             disabled={submitting}
             onClick={history.goBack}
-          />
-
+          />,
           <FlatButton
+            key="hierarchy-context-form--create"
             label={editMode ? 'Update' : 'Create'}
             variant="contained"
             disabled={submitDisabled}
-            color="primary"
+            primary
             onClick={() => document.getElementById('hierarchy-context-form').dispatchEvent(new Event('submit', { cancelable: true }))}
           />
         </DialogActions>

@@ -60,7 +60,7 @@ export default [
     format: '{filename}.py',
     codeFormat: 'python',
     options: {},
-    codeOptions: codeOptionsInline,
+    codeOptionsInline
   },
   {
     value: 'csharp',
@@ -110,7 +110,6 @@ export default [
     format: '',
     codeFormat: 'sh',
     options: {},
-    defaultHandler: 'LAMBDA_ARTIFACT',
     codeOptions: codeOptionsInline,
   },
   {

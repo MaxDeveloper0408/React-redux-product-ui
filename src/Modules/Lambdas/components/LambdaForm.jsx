@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import orderBy from 'lodash/orderBy';
+import { get, orderBy } from 'lodash';
 import { TextField, SelectField } from 'components/Form';
 import { Field } from 'react-final-form';
 import { Row, Col } from 'react-flexybox';

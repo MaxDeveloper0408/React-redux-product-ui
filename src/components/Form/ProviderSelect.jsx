@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import orderBy from 'lodash/orderBy';
+import { orderBy } from 'lodash';
 import { Field } from 'react-final-form';
 import { composeValidators, required } from 'util/forms';
 import { getLastFromSplit } from 'util/helpers/strings';

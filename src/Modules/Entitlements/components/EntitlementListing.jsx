@@ -69,16 +69,16 @@ class EntitlementListing extends PureComponent {
     entitlementActions.updateEntitlement({ fqon, identityId, actions: compiledActions, entitlementActions, onSuccess });
   }
 
-  handleSelectedIdentity = (result) => {
+  handleSelectedIdentity = (selectedIdentityId, selectedIdentity) => {
     const { fqon, entitlementActions, entityId, entityKey } = this.props;
 
     this.setState({
-      selectedIdentityId: result.id,
-      selectedIdentityName: result.name,
-      selectedIdentityType: result.typeId,
+      selectedIdentityId,
+      selectedIdentityName: selectedIdentity.name,
+      selectedIdentityType: selectedIdentity.typeId,
     });
 
-    entitlementActions.fetchEntitlements({ fqon, entityId, entityKey, identityId: result.id });
+    entitlementActions.fetchEntitlements({ fqon, entityId, entityKey, identityId: selectedIdentityId });
   }
 
   handleFieldNameChange = (selectedSearchFieldValue) => {
@@ -136,6 +136,7 @@ class EntitlementListing extends PureComponent {
                   searchLabel={searchLabel}
                   searchField={searchField}
                   onResult={this.handleSelectedIdentity}
+                  helpText="search is case sensitive"
                   userSearch
                 />
               </Col>

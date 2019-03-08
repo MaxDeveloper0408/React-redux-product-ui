@@ -1,5 +1,5 @@
 import { object, string } from 'yup';
-import pick from 'lodash/pick';
+import { pick } from 'lodash';
 import jsonPatch from 'fast-json-patch';
 
 function transformIn(model) {

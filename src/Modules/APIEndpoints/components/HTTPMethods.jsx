@@ -1,18 +1,19 @@
 import React, { PureComponent } from 'react';
 import { Field } from 'react-final-form';
-import { MultiSelect } from 'components/Form';
+import { SelectionControlGroup } from 'components/ReduxFormFields';
 import httpMethods from '../lists/httpMethods';
 
 class HTTPMethods extends PureComponent {
   render() {
     return (
       <Field
-        id="allow-http-methods"
-        label="Allow Methods"
-        component={MultiSelect}
+        inline
+        controlStyle={{ minWidth: '7em' }}
+        component={SelectionControlGroup}
+        type="checkbox"
+        id="controlGroupCheckbox"
         name="properties.methods"
-        data={httpMethods.map(e => e.value)}
-        helpText="type to search for an http method"
+        controls={httpMethods}
       />
     );
   }

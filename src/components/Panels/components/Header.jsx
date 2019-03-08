@@ -41,7 +41,7 @@ const Bubble = styled.div`
   padding: 8px;
   border-radius: 5px;
   text-align: center;
-  background-color: ${props => props.theme.colors.primary.default};
+  background-color: ${props => props.theme.colors.secondary};
   color: white;
 `;
 

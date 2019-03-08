@@ -34,7 +34,7 @@ ECSIcon.propTypes = {
 };
 
 ECSIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default ECSIcon;

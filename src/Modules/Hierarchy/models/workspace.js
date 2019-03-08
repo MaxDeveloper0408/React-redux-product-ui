@@ -1,6 +1,4 @@
-import cloneDeep from 'lodash/cloneDeep';
-import pick from 'lodash/pick';
-import merge from 'lodash/merge';
+import { cloneDeep, pick, merge } from 'lodash';
 
 /**
  * get

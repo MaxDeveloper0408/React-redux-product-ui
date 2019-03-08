@@ -24,13 +24,14 @@ import { Caption } from 'components/Typography';
 import Div from 'components/Div';
 import InfoIcon from '@material-ui/icons/InfoOutlined';
 import { EntitlementModal } from 'Modules/Entitlements';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import PayloadViewer from './PayloadViewer';
 import ContainerForm from './ContainerForm';
 import ContainerActions from './ContainerActions';
 import ContainerInstances from './ContainerInstances';
 import ContainerEvents from './ContainerEvents';
 import ContainerServiceAddresses from './ContainerServiceAddresses';
+import validate from '../validations';
 import actions from '../actions';
 import {
   getEditContainerModel,
@@ -52,7 +53,7 @@ const StatusDetails = styled.div`
   i,
   svg {
     padding: 3px;
-    color: ${props => props.theme.colors.secondary[500]};
+    color: ${props => props.theme.colors['$md-blue-500']};
   }
 `;
 
@@ -76,7 +77,7 @@ class ContainerEdit extends Component {
     inlineMode: false,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   constructor(props) {
     super(props);
@@ -256,6 +257,7 @@ class ContainerEdit extends Component {
                 loading={containerPending}
                 initialValues={initialFormValues}
                 initialValuesEqual={isEqual} // keeps array fields from re-rendering
+                validate={validate}
                 inlineMode={inlineMode}
                 keepDirtyOnReinitialize
                 render={({ handleSubmit, submitting, ...rest }) => (

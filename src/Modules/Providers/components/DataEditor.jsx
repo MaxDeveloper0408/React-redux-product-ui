@@ -5,7 +5,7 @@ import { Col, Row } from 'react-flexybox';
 import { Caption } from 'components/Typography';
 import { SelectField, AceEditor } from 'components/Form';
 import { Panel } from 'components/Panels';
-import { FileButton } from 'components/Buttons';
+import { FileInput } from 'react-md';
 import { isYAML } from 'util/validations';
 import { isJSON } from 'validator';
 import { composeValidators, validator, required } from 'util/forms';
@@ -39,12 +39,11 @@ const DataEditor = ({ title, editMode, editorMode, subTypes, form }) => {
             </Col>
           </Row>
 
-          <FileButton
+          <FileInput
             id={`${title}-${editorMode}-config`}
             label={`Upload ${editorMode}`}
             onChange={onFile}
-            color="primary"
-            accept=".yaml, .yml, .json"
+            primary
           />
           {editMode &&
           <Row center gutter={16}>

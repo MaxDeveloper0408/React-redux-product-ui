@@ -11,7 +11,7 @@ import { Card } from 'components/Cards';
 import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import Checkbox from 'components/Fields/CheckboxMini';
 import { SelectFilter, listSelectors } from 'Modules/ListFilter';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import actions from '../actions';
 import withResourceTypes from '../hocs/withResourceTypes';
@@ -25,7 +25,7 @@ class ResourceTypeListing extends PureComponent {
     resourceTypesPending: PropTypes.bool.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = { selectedRows: [], clearSelected: false };
 
@@ -112,27 +112,25 @@ class ResourceTypeListing extends PureComponent {
   render() {
     return (
       <Row gutter={5}>
-        <Col flex={12}>
-          <Card>
-            <DataTable
-              title="Resource Types"
-              data={this.props.resourceTypes}
-              highlightOnHover
-              pointerOnHover
-              sortIcon={<ArrowDownIcon />}
-              defaultSortField="name"
-              progressPending={this.props.resourceTypesPending}
-              progressComponent={<LinearProgress id="resourcetype-listing" />}
-              columns={this.defineColumns()}
-              onTableUpdate={this.handleTableChange}
-              clearSelectedRows={this.state.clearSelected}
-              noDataComponent={<NoData message="There are no resource types to display" icon={<MetamodelIcon size={150} />} />}
-              onRowClicked={this.handleRowClicked}
-              actions={<SelectFilter disabled={this.props.resourceTypesPending} />}
-              pagination
-              paginationPerPage={25}
-            />
-          </Card>
+        <Col component={Card} flex={12}>
+          <DataTable
+            title="Resource Types"
+            data={this.props.resourceTypes}
+            highlightOnHover
+            pointerOnHover
+            sortIcon={<ArrowDownIcon />}
+            defaultSortField="name"
+            progressPending={this.props.resourceTypesPending}
+            progressComponent={<LinearProgress id="resourcetype-listing" />}
+            columns={this.defineColumns()}
+            onTableUpdate={this.handleTableChange}
+            clearSelectedRows={this.state.clearSelected}
+            noDataComponent={<NoData message="There are no resource types to display" icon={<MetamodelIcon size={150} />} />}
+            onRowClicked={this.handleRowClicked}
+            actions={<SelectFilter disabled={this.props.resourceTypesPending} />}
+            pagination
+            paginationPerPage={25}
+          />
         </Col>
       </Row>
     );

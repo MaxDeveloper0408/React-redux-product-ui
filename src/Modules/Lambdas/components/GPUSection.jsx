@@ -1,6 +1,6 @@
 import React, { Fragment, memo } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { Field } from 'react-final-form';
 import { Col, Row } from 'react-flexybox';
 import { Conditional, TextField, SelectField, Checkbox } from 'components/Form';
@@ -26,11 +26,9 @@ const GPUSection = memo(({ selectedProvider }) => (
           <Field
             component={TextField}
             name="properties.gpu_support.count"
-            inputProps={{
-              min: 1,
-              max: 64,
-              step: 1,
-            }}
+            min={1}
+            max={64}
+            step={1}
             label="GPU Count"
             type="number"
             required

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { Field, FormSpy } from 'react-final-form';
 import { Row, Col } from 'react-flexybox';
 import { TextField, SelectField, Checkbox } from 'components/Form';
@@ -21,10 +21,8 @@ const LambdaAdvancedSection = ({ selectedProvider, selectedRuntime }) => (
             <Field
               component={TextField}
               name="properties.pre_warm"
-              inputProps={{
-                min: 0,
-                step: 1,
-              }}
+              min={0}
+              step={1}
               label="Pre Warm"
               type="number"
               required
@@ -36,10 +34,8 @@ const LambdaAdvancedSection = ({ selectedProvider, selectedRuntime }) => (
             <Field
               component={TextField}
               name="properties.timeout"
-              inputProps={{
-                min: 1,
-                step: 1,
-              }}
+              min={1}
+              step={1}
               label="Timeout"
               type="number"
               required

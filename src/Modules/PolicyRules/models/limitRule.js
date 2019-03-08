@@ -1,6 +1,5 @@
 import { object, array, string, boolean } from 'yup';
-import pick from 'lodash/pick';
-import omit from 'lodash/omit';
+import { pick, omit } from 'lodash';
 import jsonPatch from 'fast-json-patch';
 
 function transformIn(model) {

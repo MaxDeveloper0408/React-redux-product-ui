@@ -2,7 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import memoize from 'memoize-one';
 import { Link } from 'react-router-dom';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import {
+  AccessibleFakeButton,
+  AccessibleFakeInkedButton,
+  IconSeparator,
+} from 'react-md';
 import { FlatButton, IconButton } from 'components/Buttons';
 import TextField from 'components/Fields/TextField';
 import styled from 'styled-components';
@@ -21,26 +25,21 @@ import Divider from 'components/Divider';
 import { DotActivity } from 'components/ProgressIndicators';
 import { media } from 'util/helpers/media';
 
-const ListContainer = styled.div`
-  max-height: 400px;
-  overflow: scroll;
-`;
-
-const BreadcrumbIconStyle = styled.div`
+const IconStyle = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 3px;
   ${() => media.xs`
     display: none;
   `};
 `;
 
-const BreadcrumbLink = styled.div`
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
+const ListContainer = styled.div`
+  max-height: 400px;
+  overflow: scroll;
+`;
+
+const SeperatorStyle = styled(IconSeparator)`
   font-size: 14px;
-  margin: 0 3px 0 3px;
   color: ${props => props.theme.colors.font};
   ${() => media.xs`
     font-size: 12px;
@@ -57,12 +56,24 @@ const BreadcrumbLink = styled.div`
     overflow: hidden;
     height: 20px;
   }
+
+  &:last-child {
+    padding-left: 3px;
+    padding-right: 8px;
+  }
+
+  a:first-child {
+    padding-right: 6px;
+  }
 `;
 
-const DropDownButton = styled(ButtonBase)`
-  margin-left: 3px;
+const DropDownButton = styled(AccessibleFakeInkedButton)`
   border-radius: 50%;
   color: ${props => props.theme.colors.defaultIcon};
+
+  &:hover {
+    background: ${props => props.theme.colors.backgroundVariant};
+  }
 `;
 
 const SearchWrapper = styled.div`
@@ -192,13 +203,20 @@ class BreadCrumbLayoverDropDown extends PureComponent {
       <ClickAwayListener onClickAway={this.handleClose}>
         {/* container must be a div vs a Fragment or clickaway will only attach to first node */}
         <div>
-          <BreadcrumbLink>
-            <BreadcrumbIconStyle>{icon}</BreadcrumbIconStyle>
-            {label}
-            <DropDownButton onClick={this.handleOpen}>
-              <DropDownIcon />
-            </DropDownButton>
-          </BreadcrumbLink>
+          <AccessibleFakeButton
+            onClick={this.handleOpen}
+            component={IconSeparator}
+            iconBefore
+            label={
+              <SeperatorStyle label={label}>
+                <DropDownButton>
+                  <DropDownIcon />
+                </DropDownButton>
+              </SeperatorStyle>
+            }
+          >
+            <IconStyle>{icon}</IconStyle>
+          </AccessibleFakeButton>
 
           <Popper
             id="breadcrumbs-popper"

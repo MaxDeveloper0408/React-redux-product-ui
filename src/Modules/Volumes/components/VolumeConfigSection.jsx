@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { Row, Col } from 'react-flexybox';
-import RadioGroup from 'components/Fields/RadioGroup';
+import { SelectionControlGroup } from 'components/ReduxFormFields';
 import { SelectField, TextField, AceEditor } from 'components/Form';
 import { fixInputNumber, composeValidators, required, validator } from 'util/forms';
 import { isYAML } from 'util/validations';
@@ -12,7 +12,6 @@ import { volumeTypes, accessTypes, sizeUnits } from '../constants';
 class VolumeConfigSection extends Component {
   static propTypes = {
     selectedProvider: PropTypes.object.isRequired,
-    form: PropTypes.object.isRequired,
     formValues: PropTypes.object.isRequired,
     editMode: PropTypes.bool,
   };
@@ -23,6 +22,7 @@ class VolumeConfigSection extends Component {
 
   renderConfig() {
     const { formValues, selectedProvider, editMode } = this.props;
+
     switch (formValues.properties.type) {
       case 'dynamic':
         return (
@@ -89,7 +89,7 @@ class VolumeConfigSection extends Component {
   }
 
   render() {
-    const { form, formValues, selectedProvider, editMode } = this.props;
+    const { formValues, selectedProvider, editMode } = this.props;
     const menuItems = editMode
       ? [{ type: formValues.properties.type || '' }]
       : volumeTypes.filter(v => v.supported.some(p => p === selectedProvider.type));
@@ -118,10 +118,8 @@ class VolumeConfigSection extends Component {
             label="Size"
             type="number"
             format={fixInputNumber}
-            inputProps={{
-              min: 1,
-              step: 1,
-            }}
+            min={1}
+            step={1}
             validate={composeValidators(required())}
             required
             disabled={editMode}
@@ -142,16 +140,16 @@ class VolumeConfigSection extends Component {
         {this.renderConfig()}
 
         <Col flex={12}>
-          <RadioGroup
+          <Field
+            inline
+            component={SelectionControlGroup}
             id="accessmode-selection"
             name="properties.access_mode"
-            inline
-            noPadding
+            type="radio"
             label="Access Mode"
             controls={accessTypes}
             defaultValue={formValues.properties.access_mode}
             disabled={editMode}
-            onChange={value => form.change('properties.access_mode', value)}
           />
         </Col>
       </Row>

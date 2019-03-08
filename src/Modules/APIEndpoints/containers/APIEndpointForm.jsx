@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { Col, Row } from 'react-flexybox';
-import AutoComplete from 'components/Fields/AutoComplete';
+import { Autocomplete } from 'react-md';
 import Form, { Checkbox, SelectField, TextField } from 'components/Form';
 import { Caption } from 'components/Typography';
 import { Chips } from 'components/Lists';
 import { Panel } from 'components/Panels';
-import RateLimit from './RateLimit';
-import HTTPMethods from './HTTPMethods';
+import RateLimit from '../components/RateLimit';
+import HTTPMethods from '../components/HTTPMethods';
 import implementationTypes from '../lists/implementationTypes';
 
 const APIEndpointForm = ({
@@ -23,8 +23,8 @@ const APIEndpointForm = ({
   fetchcontainersData,
   lambdasData,
   containersData,
-  lambdasLoading,
-  containersLoading,
+  lambdasDataPending,
+  containersDataPending,
   editMode,
 }) => {
   // TODO: implement selectors
@@ -39,7 +39,7 @@ const APIEndpointForm = ({
   };
 
   const handleAutoComplete = (value) => {
-    form.change('properties.implementation_id', value.value);
+    form.change('properties.implementation_id', value);
   };
 
   const resetForm = ({ target }) => {
@@ -47,7 +47,7 @@ const APIEndpointForm = ({
     form.change('properties.implementation_type', target.value);
   };
 
-  const disabledSubmit = pristine || apiEndpointPending || lambdasLoading || containersLoading || submitting;
+  const disabledSubmit = pristine || apiEndpointPending || lambdasDataPending || containersDataPending || submitting;
 
   return (
     <Form
@@ -63,7 +63,7 @@ const APIEndpointForm = ({
         <Col flex={12}>
           <Panel title="Mapping" expandable={false}>
             <Row gutter={5}>
-              <Col flex={2} xs={12} sm={12}>
+              <Col flex={2} xs={12} sm={4}>
                 <Field
                   id="endpoint-type"
                   component={SelectField}
@@ -76,34 +76,27 @@ const APIEndpointForm = ({
                   required
                 />
               </Col>
-              {values.properties.implementation_type === 'lambda' && (
+              {values.properties.implementation_type === 'lambda' &&
                 <Col flex={4} xs={12} sm={12}>
-                  <AutoComplete
+                  <Autocomplete
                     id="lambdas-dropdown"
                     data={lambdasData}
-                    label="Search for a Lambda"
                     dataLabel="name"
                     dataValue="id"
-                    onMenuOpen={() => fetchlambdasData()}
-                    onSelected={handleAutoComplete}
-                    isLoading={lambdasLoading}
-                    noOptionsMessage={() => 'no lambdas found'}
-                    helpText="Search for a lambda within this environment"
+                    label="Search Lambdas"
+                    clearOnAutocomplete
+                    onClick={() => fetchlambdasData()}
+                    onAutocomplete={handleAutoComplete}
+                    helpText="search in the current org by lambda name/uuid, or paste a lambda uuid below"
                   />
-                </Col>
-              )}
-
-              {values.properties.implementation_type === 'lambda' && (
-                <Col flex={4} xs={12} sm={12}>
-                  <Field
-                    component={TextField}
-                    name="properties.implementation_id"
-                    label="Lambda UUID"
-                    helpText="Optionally, you may paste a known lambda uuid"
-                  />
-                </Col>
-              )}
-
+                  {/* TODO: needs a custom search control since autocomplete above cannot be validated with react-final-form so we do it here */}
+                  {(values.properties.implementation_type === 'lambda') &&
+                    <Field
+                      component={TextField}
+                      name="properties.implementation_id"
+                      label="Lambda UUID"
+                    />}
+                </Col>}
               {values.properties.implementation_type === 'container' &&
                 <Col flex={6} xs={12} sm={12}>
                   <Field
@@ -232,14 +225,14 @@ APIEndpointForm.propTypes = {
   fetchcontainersData: PropTypes.func.isRequired,
   lambdasData: PropTypes.array.isRequired,
   containersData: PropTypes.array.isRequired,
-  lambdasLoading: PropTypes.bool,
-  containersLoading: PropTypes.bool,
+  lambdasDataPending: PropTypes.bool,
+  containersDataPending: PropTypes.bool,
   editMode: PropTypes.bool,
 };
 
 APIEndpointForm.defaultProps = {
-  lambdasLoading: false,
-  containersLoading: false,
+  lambdasDataPending: false,
+  containersDataPending: false,
   editMode: false,
 };
 

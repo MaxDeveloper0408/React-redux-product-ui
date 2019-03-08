@@ -11,6 +11,7 @@ const baseAnime = css`
 `;
 
 const PersistentDrawerStyle = styled.nav`
+  background-color: ${({ theme }) => theme.colors.primary};
   position: relative;
   flex: 1 0 auto;
   display: flex;

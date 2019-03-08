@@ -1,6 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import merge from 'lodash/merge';
-import cloneDeep from 'lodash/cloneDeep';
+import { merge, cloneDeep } from 'lodash';
 import { fetchAPI } from 'config/lib/utility';
 import {
   FETCH_LOGPROVIDER_REQUEST,

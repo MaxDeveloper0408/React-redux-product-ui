@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+// import { isEqual } from 'lodash';
 import { Field, FormSpy } from 'react-final-form';
 import { Col, Row } from 'react-flexybox';
 import { SelectField, TextField } from 'components/Form';
@@ -217,7 +218,7 @@ class ProviderForm extends PureComponent {
         </Row>
 
         {hasContainer && (
-          <FormSpy>
+          <FormSpy subscription={{ values: true }}>
             {({ values }) => (
               <Row gutter={5}>
                 <Col flex={12}>
@@ -229,7 +230,7 @@ class ProviderForm extends PureComponent {
                       />
                     }
                     <ContainerForm
-                      values={values.properties.services[0].container_spec}
+                      values={values}
                       form={form}
                       inlineMode
                       editMode={editMode}

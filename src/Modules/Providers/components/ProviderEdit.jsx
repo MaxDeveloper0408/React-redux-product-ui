@@ -18,7 +18,7 @@ import ActionsToolbar from 'components/ActionsToolbar';
 import { Tabs, Tab } from 'components/Tabs';
 import { Card, CardTitle } from 'components/Cards';
 import { EntitlementModal } from 'Modules/Entitlements';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import PayloadViewer from './PayloadViewer';
 import ProviderForm from './ProviderForm';
@@ -43,7 +43,7 @@ class ProviderEdit extends PureComponent {
     hasContainer: PropTypes.bool.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   componentDidMount() {
     const { match, providerActions } = this.props;
@@ -152,8 +152,8 @@ class ProviderEdit extends PureComponent {
               hasContainer &&
               <FlatButton
                 key="provider-container-redeploy"
-                icon={<LaunchIcon fontSize="small" />}
-                label="Redeploy Container"
+                icon={<LaunchIcon fontIcon="small" />}
+                label="edeploy Container"
                 type="submit"
                 onClick={this.handleRedeploy}
                 disabled={providerPending}

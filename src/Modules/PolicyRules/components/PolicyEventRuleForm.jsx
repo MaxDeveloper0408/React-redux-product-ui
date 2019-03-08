@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { Row, Col } from 'react-flexybox';
 import { LambdaIcon } from 'components/Icons';
-import AutoComplete from 'components/Fields/AutoComplete';
+import { Autocomplete } from 'react-md';
 import InputIcon from '@material-ui/icons/Input';
 import { Panel } from 'components/Panels';
 import { TextField } from 'components/Form';
@@ -36,10 +36,9 @@ const PolicyEventRuleForm = ({
   form,
   onClickLambdasDropDown,
   lambdas,
-  lambdasLoading,
 }) => {
   const handleAutoComplete = (value) => {
-    form.change('properties.lambda.id', value.value);
+    form.change('properties.lambda.id', value);
   };
 
   return (
@@ -79,16 +78,15 @@ const PolicyEventRuleForm = ({
           <Panel title="Invoke Lambda" icon={<LambdaIcon size={20} color="action" />} expandable={false}>
             <Row gutter={5}>
               <Col flex={12}>
-                <AutoComplete
+                <Autocomplete
                   id="lambdas-dropdown"
                   data={lambdas}
-                  label="Search for a Lambda"
                   dataLabel="name"
                   dataValue="id"
-                  onMenuOpen={onClickLambdasDropDown}
-                  onSelected={handleAutoComplete}
-                  isLoading={lambdasLoading}
-                  noOptionsMessage={() => 'no lambdas found'}
+                  clearOnAutocomplete
+                  onClick={onClickLambdasDropDown}
+                  onAutocomplete={value => handleAutoComplete(value)}
+                  placeholder="Search"
                   helpText="search in the current org by lambda name/uuid, or paste a lambda uuid below"
                 />
 
@@ -125,7 +123,6 @@ PolicyEventRuleForm.propTypes = {
   form: PropTypes.object.isRequired,
   onClickLambdasDropDown: PropTypes.func.isRequired,
   lambdas: PropTypes.array.isRequired,
-  lambdasLoading: PropTypes.bool.isRequired,
 };
 
 export default PolicyEventRuleForm;

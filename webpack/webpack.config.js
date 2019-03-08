@@ -1,15 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Clean = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // enable manually for bundle analysis
-const MomentTimezoneDataPlugin = require('moment-timezone-data-webpack-plugin');
-const currentYear = new Date().getFullYear();
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
 const pkg = require('../package.json');
@@ -85,7 +83,9 @@ module.exports = (env) => {
           hints: 'warning',
         },
         plugins: [
-          new CleanWebpackPlugin(),
+          new Clean(['build'], {
+            root: PATHS.rootPath,
+          }),
           new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false,
@@ -124,10 +124,6 @@ module.exports = (env) => {
           // new BundleAnalyzerPlugin({ // enable manually for bundle analysis
           //   analyzerMode: 'static'
           // }),
-          new MomentTimezoneDataPlugin({
-            startYear: currentYear - 2,
-            endYear: currentYear + 10,
-          }),
           // new webpack.optimize.ModuleConcatenationPlugin(), // TODO: enable this once heap errors are resolved
           parts.generateConstants('production'),
         ],

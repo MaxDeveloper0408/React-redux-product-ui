@@ -1,6 +1,4 @@
-import cloneDeep from 'lodash/cloneDeep';
-import pick from 'lodash/pick';
-import merge from 'lodash/merge';
+import { cloneDeep, pick, merge } from 'lodash';
 
 /**
  * get
@@ -24,7 +22,7 @@ const get = (model = {}) => {
       implementation_id: '',
       synchronous: true,
       is_http_aware: false,
-      methods: ['GET'],
+      methods: 'GET',
       plugins: {
         rateLimit: {
           enabled: false,

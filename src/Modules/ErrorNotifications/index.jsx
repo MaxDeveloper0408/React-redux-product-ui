@@ -3,17 +3,23 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import Snackbar from '@material-ui/core/Snackbar';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import isEqual from 'lodash/isEqual';
+import { Snackbar } from 'react-md';
+import { isEqual } from 'lodash';
 
-const EnhancedSnackBar = styled(SnackbarContent)`
+const EnhancedSnackBar = styled(Snackbar)`
+  min-height: 5em;
   max-width: 100%;
   width: 100%;
-  background-color: ${props => props.theme.colors.error};
-  font-size: 14px;
+  overflow: auto;
+  padding: 6px;
+  background-color: ${props => props.theme.colors['$md-red-700']};
+  border-radius: 0;
+
+  button {
+    padding-left: 16px;
+    padding-right: 16px;
+    color: white;
+  }
 `;
 
 class ErrorNotifications extends PureComponent {
@@ -26,6 +32,8 @@ class ErrorNotifications extends PureComponent {
 
     this.state = {
       toasts: [],
+      autohide: true,
+      autohideTimeout: 8000,
     };
   }
 
@@ -40,7 +48,6 @@ class ErrorNotifications extends PureComponent {
       // deal with errors when a string
       if (typeof error === 'string') {
         const errorPayload = {
-          open: true,
           text: error,
           action: 'Close',
         };
@@ -58,7 +65,6 @@ class ErrorNotifications extends PureComponent {
 
         if (!isSyncError) {
           const errorPayload = {
-            open: true,
             text: `${friendlyMessage} ${message} ${statusCode && `(code ${statusCode})`}`,
             action: 'Close',
           };
@@ -83,52 +89,13 @@ class ErrorNotifications extends PureComponent {
     this.setState({ toasts });
   }
 
-  handleClose = index => () => {
-    this.setState((state) => {
-      const newToasts = state.toasts.map((item, i) => {
-        if (index === i) {
-          return {
-            ...item,
-            open: false,
-          };
-        }
-
-        return item;
-      });
-
-      return { toasts: newToasts };
-    });
-  }
-
   render() {
     return (
-      this.state.toasts.map((snack, index) => (
-        <Snackbar
-          key={index}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          open={snack.open}
-          autoHideDuration={8000}
-          onClose={this.handleClose(index)}
-          onExited={this.removeToast}
-        >
-          <EnhancedSnackBar
-            message={snack.text}
-            action={[
-              <IconButton
-                key="close"
-                aria-label={snack.action}
-                color="inherit"
-                onClick={this.handleClose(index)}
-              >
-                <CloseIcon />
-              </IconButton>,
-            ]}
-          />
-        </Snackbar>
-      ))
+      <EnhancedSnackBar
+        {...this.state}
+        onDismiss={this.removeToast}
+        portal
+      />
     );
   }
 }

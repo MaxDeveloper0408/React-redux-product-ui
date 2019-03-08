@@ -8,9 +8,9 @@ import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const stickyCss = css`
   position: sticky;
-  background-color: ${props => props.theme.colors.background.default};
+  background-color: ${props => props.theme.colors.background};
   top: 0;
-  z-index: 9;
+  z-index: 3;
   border-bottom: 1px solid  ${props => props.theme.colors.divider};
 `;
 

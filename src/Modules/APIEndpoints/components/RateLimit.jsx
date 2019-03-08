@@ -33,11 +33,9 @@ export default class RateLimit extends PureComponent {
             <Field
               component={TextField}
               name="properties.plugins.rateLimit.perMinute"
-              inputProps={{
-                min: 1,
-                max: 65536,
-                step: 1,
-              }}
+              min={1}
+              max={65536}
+              step={1}
               label="Per Minute"
               type="number"
               required

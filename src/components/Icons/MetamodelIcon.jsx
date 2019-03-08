@@ -14,7 +14,7 @@ MetamodelIcon.propTypes = {
 };
 
 MetamodelIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default MetamodelIcon;

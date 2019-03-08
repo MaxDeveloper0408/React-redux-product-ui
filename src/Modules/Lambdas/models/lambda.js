@@ -1,8 +1,5 @@
 import { object, array, boolean, string, number } from 'yup';
-import pick from 'lodash/pick';
-import pull from 'lodash/pull';
-import omit from 'lodash/omit';
-import getProp from 'lodash/get';
+import { pick, pull, omit, get as getProp } from 'lodash';
 import base64 from 'base-64';
 import { isBase64 } from 'util/helpers/strings';
 import { arrayToMap, convertFromMaps } from 'util/helpers/transformations';

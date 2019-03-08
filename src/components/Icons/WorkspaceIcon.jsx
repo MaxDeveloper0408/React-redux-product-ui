@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Icon from '@material-ui/icons/Widgets';
 
 const WorkspaceIconStyle = styled(Icon)`
-  font-size: ${props => `${props.size}px`};
+  font-size: ${props => `${props.size}px !important`};
   color: ${props => `${props.color}`};
 `;
 
@@ -16,7 +16,7 @@ WorkspaceIcon.propTypes = {
 };
 
 WorkspaceIcon.defaultProps = {
-  size: 22,
+  size: 24,
   color: 'action',
 };
 

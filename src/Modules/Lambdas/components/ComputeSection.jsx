@@ -4,17 +4,21 @@ import styled from 'styled-components';
 import { Field, FormSpy } from 'react-final-form';
 import { Row, Col } from 'react-flexybox';
 import { TextField } from 'components/Form';
-import Slider from '@material-ui/lab/Slider';
+import { Slider } from 'react-md';
 import MemoryIcon from '@material-ui/icons/SdCard';
 import CPUIcon from '@material-ui/icons/Memory';
 import { composeValidators, fixInputNumber, fixInputDecimal, min, max, mod, required } from 'util/forms';
 
 const SliderStyled = styled(Slider)`
-  padding: 24px 8px 0 8px;
-`;
+  align-items: center;
 
-const Label = styled.span`
-  padding-left: 8px;
+  .md-slider-thumb {
+    z-index: 2;
+  }
+
+  .md-slider-discrete-tick {
+    z-index: 1;
+  }
 `;
 
 class ComputeForm extends Component {
@@ -24,9 +28,13 @@ class ComputeForm extends Component {
     cpuMin: PropTypes.number,
     cpuMax: PropTypes.number,
     cpuStep: PropTypes.number,
+    cpuStepSlider: PropTypes.number,
     memMin: PropTypes.number,
     memMax: PropTypes.number,
     memStep: PropTypes.number,
+    memStepSlider: PropTypes.number,
+    cpuDiscrete: PropTypes.bool,
+    memDiscrete: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -35,12 +43,22 @@ class ComputeForm extends Component {
     cpuMin: 0.1,
     cpuMax: 4.0,
     cpuStep: 0.1,
+    cpuStepSlider: 0.1,
     memMin: 128,
     memMax: 2048,
     memStep: 1,
+    memStepSlider: 32,
+    cpuDiscrete: true,
+    memDiscrete: true,
   };
 
-  onChangeCPUSlider = form => (event, value) => {
+  handleFocus = (event) => {
+    const { target } = event;
+
+    setTimeout(() => target.select());
+  }
+
+  onChangeCPU = form => (value) => {
     const { cpuName, cpuMin } = this.props;
     const formattedValue = value || value >= 0
       ? fixInputDecimal(value)
@@ -51,7 +69,7 @@ class ComputeForm extends Component {
     }
   }
 
-  onChangeMemorySlider = form => (event, value) => {
+  onChangeMemory = form => (value) => {
     const { memName, memMin } = this.props;
     const formattedValue = value || value >= 0
       ? fixInputNumber(value)
@@ -69,9 +87,13 @@ class ComputeForm extends Component {
       cpuMin,
       cpuMax,
       cpuStep,
+      cpuStepSlider,
       memMin,
       memMax,
       memStep,
+      memStepSlider,
+      cpuDiscrete,
+      memDiscrete,
     } = this.props;
 
     return (
@@ -79,29 +101,29 @@ class ComputeForm extends Component {
         {({ form, values }) => (
           <Row gutter={5} center>
             <Col flex={10} xs={8}>
-              <CPUIcon fontSize="small" color="action" />
-              <Label>CPU</Label>
               <SliderStyled
-                value={values.properties.cpus}
-                aria-labelledby="label"
-                onChange={this.onChangeCPUSlider(form)}
+                id={`${cpuName}--cpu`}
+                label="CPU"
                 min={cpuMin}
                 max={cpuMax}
-                step={cpuStep}
+                step={cpuStepSlider}
+                leftIcon={<CPUIcon fontSize="small" color="action" />}
+                value={values.properties.cpus}
+                onChange={this.onChangeCPU(form)}
+                discrete={cpuDiscrete}
+                valuePrecision={1}
               />
             </Col>
             <Col flex={2} xs={4} alignSelf="center">
               <Field
                 component={TextField}
                 name={cpuName}
-                inputProps={{
-                  min: cpuMin,
-                  max: cpuMax,
-                  step: cpuStep,
-                }}
+                step={cpuStep}
                 label="CPU"
                 type="number"
                 required
+                onChange={this.onChangeCPU(form)}
+                onFocus={this.handleFocus}
                 parse={fixInputDecimal}
                 format={fixInputDecimal}
                 validate={composeValidators(
@@ -112,29 +134,30 @@ class ComputeForm extends Component {
               />
             </Col>
             <Col flex={10} xs={8}>
-              <MemoryIcon fontSize="small" color="action" />
-              <Label>Memory (MB)</Label>
               <SliderStyled
-                value={values.properties.memory}
-                aria-labelledby="label"
-                onChange={this.onChangeMemorySlider(form)}
+                id={`${memName}--memory`}
+                label="Memory (MB)"
                 min={memMin}
                 max={memMax}
-                step={memStep}
+                step={memStepSlider}
+                leftIcon={<MemoryIcon fontSize="small" color="action" />}
+                value={values.properties.memory}
+                onChange={this.onChangeMemory(form)}
+                discrete={memDiscrete}
+                discreteTicks={memMin}
+                tickWidth={6}
               />
             </Col>
             <Col flex={2} xs={4} alignSelf="center">
               <Field
                 component={TextField}
                 name={memName}
-                inputProps={{
-                  min: memMin,
-                  max: memMax,
-                  step: memStep,
-                }}
+                step={memStep}
                 label="Memory"
                 type="number"
                 required
+                onChange={this.onChangeMemory(form)}
+                onFocus={this.handleFocus}
                 parse={fixInputNumber}
                 format={fixInputNumber}
                 validate={composeValidators(

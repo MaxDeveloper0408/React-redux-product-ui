@@ -28,7 +28,7 @@ const Metric = styled.div`
   padding: 8px;
   width: 100%;
   font-size: 32px;
-  word-break: normal;
+  word-break: break-word;
 
   &:not(:last-child) {
     border-right: 1px solid #E0E0E0;

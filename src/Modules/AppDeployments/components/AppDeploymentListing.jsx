@@ -13,7 +13,7 @@ import { StatusBubble } from 'components/Status';
 import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import Checkbox from 'components/Fields/CheckboxMini';
 import { SelectFilter, listSelectors } from 'Modules/ListFilter';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import ExpanderRow from './ExpanderRow';
 import withAppDeployments from '../hocs/withAppDeployments';
@@ -29,7 +29,7 @@ class AppDeploymenListing extends PureComponent {
     appDeploymentsPending: PropTypes.bool.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = { selectedRows: [], clearSelected: false };
 
@@ -144,33 +144,31 @@ class AppDeploymenListing extends PureComponent {
   render() {
     return (
       <Row gutter={5}>
-        <Col flex={12}>
-          <Card>
-            <DataTable
-              title="Application Deployments"
-              data={this.props.appDeployments}
-              // highlightOnHover
-              // pointerOnHover
-              selectableRows
-              selectableRowsComponent={Checkbox}
-              selectableRowsComponentProps={{ indeterminate: handleIndeterminate }}
-              sortIcon={<ArrowDownIcon />}
-              defaultSortField="name"
-              progressPending={this.props.appDeploymentsPending}
-              progressComponent={<LinearProgress id="user-listing" />}
-              columns={this.defineColumns()}
-              contextActions={this.defineContextActions()}
-              onTableUpdate={this.handleTableChange}
-              clearSelectedRows={this.state.clearSelected}
-              noDataComponent={<NoData message="There are no application deployments to display" icon={<AppDeploymentIcon size={150} />} />}
-              // onRowClicked={this.handleRowClicked}
-              actions={<SelectFilter disabled={this.props.appDeploymentsPending} />}
-              expandableRows
-              expandableRowsComponent={<ExpanderRow />}
-              pagination
-              paginationPerPage={15}
-            />
-          </Card>
+        <Col component={Card} flex={12}>
+          <DataTable
+            title="Application Deployments"
+            data={this.props.appDeployments}
+            // highlightOnHover
+            // pointerOnHover
+            selectableRows
+            selectableRowsComponent={Checkbox}
+            selectableRowsComponentProps={{ indeterminate: handleIndeterminate }}
+            sortIcon={<ArrowDownIcon />}
+            defaultSortField="name"
+            progressPending={this.props.appDeploymentsPending}
+            progressComponent={<LinearProgress id="user-listing" />}
+            columns={this.defineColumns()}
+            contextActions={this.defineContextActions()}
+            onTableUpdate={this.handleTableChange}
+            clearSelectedRows={this.state.clearSelected}
+            noDataComponent={<NoData message="There are no application deployments to display" icon={<AppDeploymentIcon size={150} />} />}
+            // onRowClicked={this.handleRowClicked}
+            actions={<SelectFilter disabled={this.props.appDeploymentsPending} />}
+            expandableRows
+            expandableRowsComponent={<ExpanderRow />}
+            pagination
+            paginationPerPage={15}
+          />
         </Col>
       </Row>
     );

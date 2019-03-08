@@ -17,7 +17,7 @@ ScalaIcon.propTypes = {
 };
 
 ScalaIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default ScalaIcon;

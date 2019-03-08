@@ -2,19 +2,18 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Form as FinalForm } from 'react-final-form';
 import Form from 'components/Form';
 import arrayMutators from 'final-form-arrays';
 import createDecorator from 'final-form-focus';
 import { Col, Row } from 'react-flexybox';
+import SelectField from 'components/Fields/SelectField';
 import Checkbox from 'components/Fields/Checkbox';
 import { Panel } from 'components/Panels';
 import { FlatButton } from 'components/Buttons';
 import { Caption } from 'components/Typography';
 import { ActivityContainer } from 'components/ProgressIndicators';
-import AutoComplete from 'components/Fields/AutoComplete';
 import ActionsToolbar from 'components/ActionsToolbar';
 import ProviderForm from './ProviderForm';
 import validate from '../validations';
@@ -24,15 +23,6 @@ import withProvider from '../hocs/withProvider';
 import providerModel from '../models/provider';
 
 const focusOnErrors = createDecorator();
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  button {
-    margin: 5px;
-  }
-`;
 
 class ProviderCreate extends PureComponent {
   static propTypes = {
@@ -141,15 +131,15 @@ class ProviderCreate extends PureComponent {
     }
   };
 
-  handleProviderChange = (value) => {
+  handleProviderChange = ({ target }) => {
     const { resourceTypes, setSelectedProviderType } = this.props;
-    const providerType = resourceTypes.find(type => type.name === value.value);
+    const providerType = resourceTypes.find(type => type.name === target.value);
 
     if (providerType.id) {
       setSelectedProviderType({ fqon: 'root', providerType });
       this.setState({
         providerSelected: true,
-        providerResourceTypeValue: value.value,
+        providerResourceTypeValue: target.value,
         showContainerOption: providerType.showContainerOption,
         containerOptionSelected: !providerType.showContainerOption,
         containerChecked: providerType.showContainerOption,
@@ -179,6 +169,7 @@ class ProviderCreate extends PureComponent {
     const {
       pageOneDone,
       providerSelected,
+      providerResourceTypeValue,
       showContainerOption,
       containerChecked,
     } = this.state;
@@ -211,15 +202,17 @@ class ProviderCreate extends PureComponent {
                       <Panel title="Select a Provider Type" expandable={false}>
                         <Row>
                           <Col flex={12}>
-                            <AutoComplete
+                            <SelectField
                               id="select-provider-type"
-                              data={resourceTypes}
-                              label="Search for a Resource Type"
-                              dataLabel="displayName"
-                              dataValue="name"
-                              onSelected={this.handleProviderChange}
-                              noOptionsMessage={() => 'no resource types were found'}
-                              autoFocus
+                              component={SelectField}
+                              menuItems={resourceTypes}
+                              itemLabel="displayName"
+                              itemValue="name"
+                              label="Provider Type"
+                              onChange={this.handleProviderChange}
+                              value={providerResourceTypeValue}
+                              required
+                              fullWidth
                             />
                           </Col>
 
@@ -236,20 +229,24 @@ class ProviderCreate extends PureComponent {
                             </Col>
                           )}
 
-                          <ButtonWrapper>
-                            <FlatButton
-                              label="Cancel"
-                              component={Link}
-                              to={this.generateBackLink()}
-                            />
-                            <FlatButton
-                              label="Next"
-                              variant="contained"
-                              color="primary"
-                              onClick={this.handleNextPage}
-                              disabled={!providerSelected || providerPending || envSchemaPending}
-                            />
-                          </ButtonWrapper>
+                          <Row gutter={5}>
+                            <Col flex={12}>
+                              <Col flex={12}>
+                                <FlatButton
+                                  label="Cancel"
+                                  component={Link}
+                                  to={this.generateBackLink()}
+                                />
+                                <FlatButton
+                                  label="Next"
+                                  variant="contained"
+                                  color="primary"
+                                  onClick={this.handleNextPage}
+                                  disabled={!providerSelected || providerPending || envSchemaPending}
+                                />
+                              </Col>
+                            </Col>
+                          </Row>
                         </Row>
                       </Panel>
                     </Col>

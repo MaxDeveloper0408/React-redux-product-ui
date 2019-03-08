@@ -6,7 +6,7 @@ const FieldsetStyle = styled.fieldset`
   ${props => (props.border
     ? `border: 2px solid ${props.theme.colors.divider} !important`
     : 'border: none !important')};
-  ${props => props.background && `background-color: ${props.theme.colors.background.default}`};
+  ${props => props.background && `background-color: ${props.theme.colors.background}`};
 `;
 
 const LegendStyle = styled.legend`
@@ -14,7 +14,7 @@ const LegendStyle = styled.legend`
   color: ${props => props.theme.colors.font} !important;
 
   code {
-    color: ${props => props.theme.colors.background.default} !important;
+    color: ${props => props.theme.colors.background} !important;
   }
 
   font-size: ${props => props.legendFontSize};

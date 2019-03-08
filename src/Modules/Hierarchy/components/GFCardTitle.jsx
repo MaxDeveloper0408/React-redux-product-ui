@@ -9,15 +9,15 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
   padding-top: 8px;
-  padding-left: 27px;
+  padding-left: 24px;
   padding-right: 8px;
-  word-break: normal;
+  word-break: break-word;
   font-size: 15px;
   color: ${props => props.theme.colors.font};
 `;
 
 const Subtitle = styled.div`
-  padding-left: 27px;
+  padding-left: 24px;
   padding-right: 8px;
   font-size: 11px;
   overflow: hidden;

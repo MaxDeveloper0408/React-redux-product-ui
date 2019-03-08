@@ -7,7 +7,7 @@ import { EntitlementIcon, WorkspaceIcon, DeleteIcon } from 'components/Icons';
 import EditIcon from '@material-ui/icons/Edit';
 import { withUserProfile } from 'Modules/UserProfile';
 import { EntitlementModal } from 'Modules/Entitlements';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import NameModal from 'Modules/ModalRoot/Modals/NameModal';
 import Card from './GFCard';
@@ -24,7 +24,7 @@ class WorkspaceCard extends Component {
     userProfileActions: PropTypes.object.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   navWorkspaceDetails = () => {
     const { model, match, history } = this.props;

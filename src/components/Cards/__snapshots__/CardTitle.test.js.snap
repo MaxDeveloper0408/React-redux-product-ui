@@ -8,7 +8,6 @@ exports[`(Cards) CardTitle mounts with basic props 1`] = `
 
 .c2 {
   font-size: 20px;
-  line-height: 24px;
   color: #424242;
   font-size: 16px;
   font-weight: 500;
@@ -53,7 +52,6 @@ exports[`(Cards) CardTitle mounts with children 1`] = `
 
 .c2 {
   font-size: 20px;
-  line-height: 24px;
   color: #424242;
   font-size: 16px;
   font-weight: 500;
@@ -98,7 +96,6 @@ exports[`(Cards) CardTitle mounts with title and subTitle 1`] = `
 
 .c2 {
   font-size: 20px;
-  line-height: 24px;
   color: #424242;
   font-size: 16px;
   font-weight: 500;

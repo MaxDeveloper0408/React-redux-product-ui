@@ -8,7 +8,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 const ToolTipIcon = styled(InfoOutlineIcon)`
   margin-top: 1px;
-  font-size: 16px;
+  font-size: 16px !important;
 `;
 
 /* eslint-disable react/prop-types */

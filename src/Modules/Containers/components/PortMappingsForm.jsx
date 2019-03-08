@@ -95,10 +95,8 @@ class PortMappingsForm extends PureComponent {
                         <Field
                           name={`${member}.container_port`}
                           type="number"
-                          inputProps={{
-                            min: 0,
-                            max: 65536,
-                          }}
+                          min={0}
+                          max={65535}
                           label="Container Port"
                           component={TextField}
                           required
@@ -112,10 +110,8 @@ class PortMappingsForm extends PureComponent {
                         <Field
                           name={`${member}.lb_port`}
                           type="number"
-                          inputProps={{
-                            min: 0,
-                            max: 65536,
-                          }}
+                          min={0}
+                          max={65535}
                           label="Load Balancer Port"
                           component={TextField}
                           required

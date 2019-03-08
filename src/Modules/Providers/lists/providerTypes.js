@@ -1,4 +1,4 @@
-import orderBy from 'lodash/orderBy';
+import { orderBy } from 'lodash';
 import providerModel from '../models/provider';
 import dcosModel from '../models/dcos';
 import kubernetesModel from '../models/kubernetes';
@@ -6,7 +6,6 @@ import ecsModel from '../models/ecs';
 import dockerModel from '../models/docker';
 import laserModel from '../models/laser';
 import executorModel from '../models/executor';
-import awsLambdaModel from '../models/awsLambda';
 
 export const uiProviderTypes = [
   // Caas
@@ -126,9 +125,9 @@ export const uiProviderTypes = [
   },
   {
     name: 'Gestalt::Configuration::Provider::Lambda::AWS',
-    model: awsLambdaModel,
+    model: providerModel,
     allowLinkedProviders: true,
-    showContainerOption: false,
+    showContainerOption: true,
   },
 
   {

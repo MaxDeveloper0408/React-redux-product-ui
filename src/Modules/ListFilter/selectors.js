@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { isRecentWithin } from 'util/helpers/dates';
 
 const selectItems = (state, selector) => {

@@ -15,7 +15,7 @@ const TileSection = styled.div`
 
 const PageWrapper = styled.div`
   position: fixed;
-  background-color: ${props => props.theme.colors.background.default};
+  background-color: ${props => props.theme.colors['$md-grey-50']};
   top: 0;
   left: 0;
   height: 100%;

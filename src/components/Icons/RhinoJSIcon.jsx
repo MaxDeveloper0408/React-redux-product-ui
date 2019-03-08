@@ -13,7 +13,7 @@ RhinoJSIcon.propTypes = {
 };
 
 RhinoJSIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default RhinoJSIcon;

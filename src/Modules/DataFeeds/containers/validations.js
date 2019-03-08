@@ -1,4 +1,4 @@
-import merge from 'lodash/merge';
+import { merge } from 'lodash';
 import { nestedObjectFromString } from 'util/helpers/transformations';
 
 export default (values) => {

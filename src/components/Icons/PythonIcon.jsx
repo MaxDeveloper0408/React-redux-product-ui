@@ -15,7 +15,7 @@ PythonIcon.propTypes = {
 };
 
 PythonIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default PythonIcon;

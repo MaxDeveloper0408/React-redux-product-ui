@@ -16,7 +16,7 @@ const ListItem = styled.li`
   color: ${props => props.theme.colors.fontVariant};
 
   &:hover {
-    background-color: ${props => props.theme.colors.leftNavBackgroundVariant};
+    background-color: ${props => props.theme.colors.primaryVariant};
 
     .nav-on-menu-hover {
       display: flex;
@@ -28,6 +28,7 @@ const ListItem = styled.li`
 const NavLinkStyle = styled(NavLink)`
   position: relative;
   display: flex;
+  padding-right: 20px;
   text-decoration: none;
   color: inherit;
 `;
@@ -59,7 +60,7 @@ const SubMenu = styled(({ miniWidth, expandedWidth, ...rest }) => <div {...rest}
   box-shadow: 2px 1px 2px -2px rgba(0, 0, 0, 0.1);
   opacity: 0.98;
   left: calc(${props => props.miniWidth} - 1px);
-  border-left: 1px solid ${props => props.theme.colors.leftNavBackground};
+  border-left: 1px solid ${props => props.theme.colors.primary};
   max-width: calc(${props => props.expandedWidth} - ${props => props.miniWidth});
   background-color: ${props => props.theme.colors.accent};
   color: ${props => props.theme.colors.font};

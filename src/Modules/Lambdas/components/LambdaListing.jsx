@@ -11,7 +11,7 @@ import { Card } from 'components/Cards';
 import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import Checkbox from 'components/Fields/CheckboxMini';
 import { LambdaIcon } from 'components/Icons';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import NameModal from 'Modules/ModalRoot/Modals/NameModal';
 import { SelectFilter, listSelectors } from 'Modules/ListFilter';
@@ -41,7 +41,7 @@ class LambdaListing extends PureComponent {
     hierarchyContext: PropTypes.object.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = { selectedRows: [], clearSelected: false };
 
@@ -173,22 +173,6 @@ class LambdaListing extends PureComponent {
         name: 'Owner',
         selector: 'owner.name',
         sortable: true,
-      },
-      {
-        name: 'CPU',
-        selector: 'properties.cpus',
-        sortable: true,
-        right: true,
-        grow: 0,
-        minWidth: '50px',
-      },
-      {
-        name: 'Mem',
-        selector: 'properties.memory',
-        sortable: true,
-        right: true,
-        grow: 0,
-        minWidth: '50px',
       },
       {
         name: 'Created',

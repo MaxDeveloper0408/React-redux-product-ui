@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
 import { FieldArray } from 'react-final-form-arrays';
 import { Row, Col } from 'react-flexybox';
-import { FileButton } from 'components/Buttons';
+import { FileInput } from 'react-md';
 import { isSecretKeyValidation, secretKeyValidationPattern } from 'util/validations';
 import { TextField } from 'components/Form';
 import { FieldContainer, FieldItem, RemoveButton, AddButton } from 'components/FieldArrays';
@@ -70,11 +70,12 @@ const SecretItemsForm = ({ fieldName, multiPart, disabled, formValues, form }) =
 
               {!disabled &&
                 <Col flex={2}>
-                  <FileButton
+                  <FileInput
                     id={`${member}-upload`}
                     label="Upload File"
                     onChange={file => onFile(file, index, form, formValues)}
                     accept={supportedFormats}
+                    primary
                   />
                 </Col>}
             </Row>

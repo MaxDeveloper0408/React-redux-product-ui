@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { withRouter } from 'react-router-dom';
 import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import DataTable from 'react-data-table-component';
@@ -12,9 +12,9 @@ import { Title } from 'components/Typography';
 import { IconButton } from 'components/Buttons';
 import { DeleteIcon } from 'components/Icons';
 import { ALink } from 'components/Links';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import VolumeCreateModal from './VolumeCreateModal';
-import VolumeCreateMenu from './VolumeCreateMenu';
+import VolumeCreateMenu from '../components/VolumeCreateMenu';
 import actions from '../actions';
 import { selectVolumeListing } from '../reducers/selectors';
 
@@ -37,7 +37,7 @@ class VolumePanel extends PureComponent {
   };
 
   // TODO: will fix when react-router fixes hoisting error
-  // static contextType = ModalContext;
+  // static contextType = ModalConsumer;
 
   componentDidMount() {
     const { setVolumes, volumes } = this.props;
@@ -189,4 +189,4 @@ export default compose(
   withRouter,
 )(VolumePanel);
 // TODO: Place here to fix hoisting issue
-VolumePanel.contextType = ModalContext;
+VolumePanel.contextType = ModalConsumer;

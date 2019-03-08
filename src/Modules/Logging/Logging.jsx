@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -80,6 +80,10 @@ const OutputButtons = styled.div`
   button {
     margin-left: 5px;
   }
+`;
+
+const TimeSpanSelect = styled(SelectField)`
+  height: 38px;
 `;
 
 class Logging extends PureComponent {
@@ -231,7 +235,7 @@ class Logging extends PureComponent {
                   label="STDERR"
                 />
               </OutputButtons>}
-            <SelectField
+            <TimeSpanSelect
               id="log--timespan"
               menuItems={timeSpans}
               itemLabel="name"
@@ -239,7 +243,6 @@ class Logging extends PureComponent {
               value={logTimespan}
               onChange={this.setLogTimespan}
               disabled={disableControls}
-              xsmall
             />
             <IconButton
               icon={<RefreshIcon fontSize="small" />}

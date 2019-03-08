@@ -47,7 +47,7 @@ class VolumePanelCreate extends Component {
       <FinalForm
         onSubmit={this.handleSubmit}
         initialValues={initialValues}
-        render={({ form, handleSubmit, values }) => (
+        render={({ handleSubmit, values }) => (
           <form id="add-container-volume" onSubmit={handleSubmit} autoComplete="off">
             <Row gutter={5}>
               <Col flex={5} xs={12} sm={12}>
@@ -76,7 +76,6 @@ class VolumePanelCreate extends Component {
 
               <Col flex={12}>
                 <VolumeConfigSection
-                  form={form}
                   selectedProvider={selectedProvider}
                   formValues={values}
                 />

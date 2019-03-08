@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import get from 'lodash/get';
+import { get } from 'lodash';
 import memoize from 'memoize-one';
 import { generateContextEntityState } from 'util/helpers/context';
 import DataTable from 'react-data-table-component';
 import { Col, Row } from 'react-flexybox';
 import { SelectFilter } from 'Modules/ListFilter';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Name, Timestamp, Endpoints, NoData } from 'components/TableCells';
@@ -57,7 +57,7 @@ class ContainerListing extends PureComponent {
     providerContext: false,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = {
     showSystemContainers: false,
@@ -178,7 +178,9 @@ class ContainerListing extends PureComponent {
         selector: 'properties.num_instances',
         sortable: true,
         right: true,
+        compact: true,
         grow: 0,
+        minWidth: '80px',
         cell: row => <div>{row.properties.instances && `${row.properties.instances.length} / ${row.properties.num_instances}`}</div>
       },
       // {
@@ -194,6 +196,7 @@ class ContainerListing extends PureComponent {
         selector: 'properties.cpus',
         sortable: true,
         right: true,
+        compact: true,
         grow: 0,
         minWidth: '50px',
       },
@@ -202,16 +205,17 @@ class ContainerListing extends PureComponent {
         selector: 'properties.memory',
         sortable: true,
         right: true,
+        compact: true,
         grow: 0,
         minWidth: '50px',
       },
       {
-        name: 'Modified',
-        selector: 'modified.timestamp',
+        name: 'Created',
+        selector: 'created.timestamp',
         sortable: true,
         allowOverflow: true,
         wrap: true,
-        cell: row => <Timestamp timestamp={row.modified.timestamp} />
+        cell: row => <Timestamp timestamp={row.created.timestamp} />
       },
     ];
   }

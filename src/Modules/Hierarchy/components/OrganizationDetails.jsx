@@ -12,7 +12,7 @@ import { DeleteIcon, EntitlementIcon, OrganizationIcon } from 'components/Icons'
 import DetailsPane from 'components/DetailsPane';
 import ActionsToolbar from 'components/ActionsToolbar';
 import { EntitlementModal } from 'Modules/Entitlements';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import withSelf from '../../../App/hocs/withSelf';
 
@@ -26,7 +26,7 @@ class OrganizationDetails extends PureComponent {
   };
 
   // TODO: will fix when react-router fixes hoisting error
-  // static contextType = ModalContext;
+  // static contextType = ModalConsumer;
 
   showEntitlements = () => {
     const { hierarchyContext } = this.props;
@@ -114,4 +114,4 @@ export default compose(
 )(OrganizationDetails);
 
 // TODO: Place here to fix hoisting issue
-OrganizationDetails.contextType = ModalContext;
+OrganizationDetails.contextType = ModalConsumer;

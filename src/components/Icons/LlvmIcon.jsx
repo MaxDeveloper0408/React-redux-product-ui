@@ -124,7 +124,7 @@ LlvmIcon.propTypes = {
 };
 
 LlvmIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default LlvmIcon;

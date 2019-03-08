@@ -15,7 +15,7 @@ KubeIcon.propTypes = {
 };
 
 KubeIcon.defaultProps = {
-  size: 22,
+  size: 24,
 };
 
 export default KubeIcon;

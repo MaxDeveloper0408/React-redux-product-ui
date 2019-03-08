@@ -14,7 +14,7 @@ import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import Checkbox from 'components/Fields/CheckboxMini';
 import { SelectFilter, listSelectors } from 'Modules/ListFilter';
 import { A } from 'components/Links';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import { getLastFromSplit } from 'util/helpers/strings';
 import withAPIEndpoints from '../hocs/withAPIEndpoints';
@@ -31,7 +31,7 @@ class APIEndpointListing extends PureComponent {
     apiEndpointsActions: PropTypes.object.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = { selectedRows: [], clearSelected: false };
 

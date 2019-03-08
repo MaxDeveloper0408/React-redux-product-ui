@@ -11,7 +11,7 @@ import { PolicyIcon } from 'components/Icons';
 import { Card } from 'components/Cards';
 import ArrowDownIcon from '@material-ui/icons/ArrowDownward';
 import Checkbox from 'components/Fields/CheckboxMini';
-import { ModalContext } from 'Modules/ModalRoot/ModalContext';
+import { ModalConsumer } from 'Modules/ModalRoot/ModalContext';
 import ConfirmModal from 'Modules/ModalRoot/Modals/ConfirmModal';
 import { SelectFilter, listSelectors } from 'Modules/ListFilter';
 import { generateContextEntityState } from 'util/helpers/context';
@@ -28,7 +28,7 @@ class PolicyListing extends PureComponent {
     policiesActions: PropTypes.object.isRequired,
   };
 
-  static contextType = ModalContext;
+  static contextType = ModalConsumer;
 
   state = { selectedRows: [], clearSelected: false };
 
@@ -143,31 +143,29 @@ class PolicyListing extends PureComponent {
   render() {
     return (
       <Row gutter={5}>
-        <Col flex={12}>
-          <Card>
-            <DataTable
-              title="Policies"
-              data={this.props.policies}
-              highlightOnHover
-              pointerOnHover
-              selectableRows
-              selectableRowsComponent={Checkbox}
-              selectableRowsComponentProps={{ indeterminate: handleIndeterminate }}
-              sortIcon={<ArrowDownIcon />}
-              defaultSortField="name"
-              progressPending={this.props.policiesPending}
-              progressComponent={<LinearProgress id="policy-listing" />}
-              columns={this.defineColumns()}
-              contextActions={this.defineContextActions()}
-              onTableUpdate={this.handleTableChange}
-              clearSelectedRows={this.state.clearSelected}
-              noDataComponent={<NoData message="There are no policies to display" icon={<PolicyIcon size={150} />} />}
-              onRowClicked={this.handleRowClicked}
-              actions={<SelectFilter disabled={this.props.policiesPending} />}
-              pagination
-              paginationPerPage={15}
-            />
-          </Card>
+        <Col component={Card} flex={12}>
+          <DataTable
+            title="Policies"
+            data={this.props.policies}
+            highlightOnHover
+            pointerOnHover
+            selectableRows
+            selectableRowsComponent={Checkbox}
+            selectableRowsComponentProps={{ indeterminate: handleIndeterminate }}
+            sortIcon={<ArrowDownIcon />}
+            defaultSortField="name"
+            progressPending={this.props.policiesPending}
+            progressComponent={<LinearProgress id="policy-listing" />}
+            columns={this.defineColumns()}
+            contextActions={this.defineContextActions()}
+            onTableUpdate={this.handleTableChange}
+            clearSelectedRows={this.state.clearSelected}
+            noDataComponent={<NoData message="There are no policies to display" icon={<PolicyIcon size={150} />} />}
+            onRowClicked={this.handleRowClicked}
+            actions={<SelectFilter disabled={this.props.policiesPending} />}
+            pagination
+            paginationPerPage={15}
+          />
         </Col>
       </Row>
     );

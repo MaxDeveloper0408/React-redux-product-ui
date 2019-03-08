@@ -10,5 +10,14 @@ export const getCreateEndpointModel = createSelector(
 
 export const getEditEndpointModel = createSelector(
   [selectAPIEndpoint],
-  apiEndpoint => apiEndpointModel.create(apiEndpoint),
+  (apiEndpoint) => {
+    const model = { ...apiEndpoint };
+
+    // Convert to comma delimted for the SelectionControl
+    if (model.properties.methods && Array.isArray(model.properties.methods)) {
+      model.properties.methods = model.properties.methods.join(',');
+    }
+
+    return apiEndpointModel.create(model);
+  }
 );
